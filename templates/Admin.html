@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .main-content {
+      flex: 1;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .hamburger-panel {
+      width: 0;
+      height: 100%;
+      background-color: #333;
+      overflow-x: hidden;
+      transition: 0.5s;
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+
+    .hamburger-panel a {
+      padding: 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .hamburger-panel a:hover {
+      color: #f1f1f1;
+    }
+
+    .hamburger-icon {
+      font-size: 30px;
+      cursor: pointer;
+      color: #333;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+
+    @media screen and (max-width: 600px) {
+      .hamburger-panel a {
+        font-size: 24px;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    .delete-button {
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
+    .delete-button:hover {
+      background-color: #cc4637;
+    }
+
+    .delete-all-button {
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .delete-all-button:hover {
+      background-color: #cc4637;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    #video-stream {
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    #stop {
+        background-color: #ff0000;
+        color: #fff;
+    }
+
+    section{
+      height: 100vh;
+    }
+
+  </style>
+</head>
+<body>
+<section class="" id="results">
+<div class="container">
+  <div class="main-content">
+    <h1>Admin Panel</h1>
+
+    <!-- Display total rate of school -->
+    <p>Total Rate of School: {{ total_school_rate }}</p>
+    
+    <!-- Display total rate per target department -->
+    <h2>Total Rate per Target Department</h2>
+    <table border="1">
+      <tr>
+        <th>Departments</th>
+        <th>Their Total Rate</th>
+      </tr>
+      {% for department, rate in total_department_rates %}
+      <tr>
+        <td>{{ department }}</td>
+        <td>{{ rate }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    
+    <!-- Display total average rate -->
+    <p>Total Average Rate: {{ total_average_rate }}</p>
+
+    <!-- Existing survey data table -->
+    <h2>Survey Data</h2>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>There Department</th>
+        <th>There Target Department</th>
+        <th>Rating</th>
+        <th>Suggestion</th>
+        <th>Action</th>
+      </tr>
+      {% for survey in surveys %}
+      <tr>
+        <td>{{ survey.id }}</td>
+        <td>{{ survey.name }}</td>
+        <td>{{ survey.There_Department }}</td>
+        <td>{{ survey.There_TDepartment }}</td>
+        <td>{{ survey.rating }}</td>
+        <td>{{ survey.suggestion }}</td>
+        <td><a href="/delete/{{ survey.id }}">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <!-- Delete All button -->
+    <form action="/delete_all" method="post" onsubmit="return confirm('Are you sure you want to delete all entries for this department?');">
+      <button type="submit">Delete All</button>
+    </form>
+  </div>
+</div>
+</section>
+
+<section class="" id="controls">
+  <h1>Robot Control</h1>
+  <div id="video-stream">
+    <h2>Camera Streaming</h2>
+    <img src="{{ url_for('video_feed') }}" alt="Camera Feed">
+  </div>
+  <div>
+      <form action="/control" method="post">
+          <button type="submit" name="direction" value="forward">Forward</button>
+          <br>
+          <button type="submit" name="direction" value="left">Left</button>
+          <button id="stop" type="submit" name="direction" value="stop">Stop</button>
+          <button type="submit" name="direction" value="right">Right</button>
+          <br>
+          <button type="submit" name="direction" value="backward">Backward</button>
+      </form>
+  </div>
+</section>
+
+<div class="hamburger-panel" id="hamburgerPanel">
+  <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
+  <a href="#results">Results</a>
+  <a href="#controls">Control</a>
+  <a href="{{ url_for('logout') }}" onclick="logout()">Logout</a>
+</div>
+
+<div class="hamburger-icon" onclick="openNav()">☰</div>
+<script>
+  function openNav() {
+    document.getElementById("hamburgerPanel").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("hamburgerPanel").style.width = "0";
+  }
+
+  function logout() {
+    // Add logout logic here
+    alert("Logout successful!");
+    // Redirect to the login page or perform any other necessary actions
+  }
+</script>
+
+</body>
+</html>
