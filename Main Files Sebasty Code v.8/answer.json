@@ -1,0 +1,285 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day",
+        "Whats up",
+        "Hey",
+        "greetings"
+      ],
+      "responses": [
+        "Hello!",
+        "Good to see you again!",
+        "Hi there, how can I help?"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thank you!",
+        "Thanks a lot",
+        "Appreciate it",
+        "Thanks for your help"
+      ],
+      "responses": [
+        "You're welcome!",
+        "No problem!",
+        "Glad I could assist!",
+        "Anytime!",
+        "Happy to help!",
+        "You're welcome! If you have any more questions or need further assistance, feel free to ask. I'm here to help!"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "cya",
+        "See you later",
+        "Goodbye",
+        "I am Leaving",
+        "Have a Good day",
+        "bye",
+        "cao",
+        "see ya"
+      ],
+      "responses": [
+        "Sad to see you go :(",
+        "Talk to you later",
+        "Goodbye!"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "inquiry",
+      "patterns": [
+        "I have a question",
+        "Can you answer something for me?",
+        "I'm curious about"
+      ],
+      "responses": [
+        "Sure, go ahead and ask your question.",
+        "Of course, I'm here to help with any questions you have.",
+        "Feel free to ask me anything you'd like to know."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "Help",
+        "I need assistance",
+        "Can you help me?"
+      ],
+      "responses": [
+        "Sure, I'm here to help! What do you need assistance with?",
+        "Of course! What can I assist you with?",
+        "Absolutely! Let me know what you need help with."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "developer",
+      "patterns": [
+        "Who developed this?",
+        "Who created this?",
+        "Who is the developer?",
+        "Who built this application?",
+        "Who is behind this project?",
+        "Who coded this?",
+        "Who is responsible for this?",
+        "Who is the creator?",
+        "Who designed this?",
+        "Who is the team behind this?"
+      ],
+      "responses": [
+        "The developer of Sebasty. Their team includes Jurado, Luig, Brillantes, Gaylon, and Jaguit."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "stocks",
+      "patterns": [
+        "What are my stocks?",
+        "Which stocks do I own?",
+        "Show my stock portfolio"
+      ],
+      "responses": [
+        "Here are your stocks!"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "feedback",
+      "patterns": [
+        "Where can I give my feedback about the school?",
+        "I want to give feedback",
+        "I have a comment",
+        "feedback"
+      ],
+      "responses": [
+        "You can give it to me! Kindly click on the \"Feedback\" section at the top right corner of the screen, fill out the form, and submit it. I will process it so that it reaches the administration. Alternatively, you can go to the department you have concerns with and inform the officer in charge about the concerns you have."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "events",
+      "patterns": [
+        "Where can I get details about the events of the school?",
+        "Events",
+        "Details of the Event",
+        "Announcement"
+      ],
+      "responses": [
+        "You can see event details or announcements on the official social media accounts of San Sebastian College - Recollectos de Cavite. Just search San Sebastian College - Recollectos de Cavite on Facebook to look at their main page and see if there are any posted details. You can also search for the following sites depending on your concern:\n\nIDENTITY, FORMATION AND MISSION DIVISION:\n- Baste Cavite - Student affairs\n- Baste Cavite - Campus Ministry Office\n- Baste Cavite - Student Development and Placement Center\n- Baste Cavite - Health Services\n\nACADEMIC AND RESEARCH:\n- Baste Cavite - Registrar\n- Baste Cavite - Admission and Scholarships\n- Baste Cavite - Cañacao Campus\n- Baste Cavite - Senior High School\n- Baste Cavite - Office of the College Dean\n- Baste Cavite - Graduate School\n- Baste Cavite - Libraries\n- Baste Cavite - CRCW\n- Baste Cavite - LMS\n\nFINANCE DIVISION:\n- Baste Cavite - Finance\n- Baste Cavite - Bookstore"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "no",
+      "patterns": [
+        "No"
+      ],
+      "responses": [
+        "Is there anything else I can assist you with?",
+        "Alright. Let me know if you need further help.",
+        "Okay. Feel free to ask if you have any other questions."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "not_satisfied",
+      "patterns": [
+        "That's not right",
+        "That's not what I want",
+        "No",
+        "Not what I'm looking for"
+      ],
+      "responses": [
+        "I'm sorry to hear that. Could you please rephrase your question or provide more details?",
+        "Apologies for the misunderstanding. Can you try asking again using different words?",
+        "Understood. Feel free to ask again in a different way."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "questions",
+      "patterns": [
+        "Where can I ask questions and inquiries?",
+        "How can I get information about SSCRdC?",
+        "Where can I seek assistance?",
+        "How do I find answers to my questions?"
+      ],
+      "responses": [
+        "You can ask me anything about SSCRdC. While I may be incomplete with details, I will do my best to answer your questions. Alternatively, you can directly ask the officer in charge of the department in concern or message their Facebook account.\n\nIDENTITY, FORMATION AND MISSION DIVISION:\n- Baste Cavite - Student affairs\n- Baste Cavite - Campus Ministry Office\n- Baste Cavite - Student Development and Placement Center\n- Baste Cavite - Health Services\n\nACADEMIC AND RESEARCH:\n- Baste Cavite - Registrar\n- Baste Cavite - Admission and Scholarships\n- Baste Cavite - Cañacao Campus\n- Baste Cavite - Senior High School\n- Baste Cavite - Office of the College Dean\n- Baste Cavite - Graduate School\n- Baste Cavite - Libraries\n- Baste Cavite - CRCW\n- Baste Cavite - LMS\n\nFINANCE DIVISION:\n- Baste Cavite - Finance\n- Baste Cavite - Bookstore"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "president",
+      "patterns": [
+        "Who is the head of the school?",
+        "Who leads the school?",
+        "Who is the top official of the school?"
+      ],
+      "responses": [
+        "REV. FR. RAFAEL B. PECSON, OAR"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "dean",
+      "patterns": [
+        "Who is the College Dean?",
+        "Who is in charge of the college?",
+        "Who oversees the college?"
+      ],
+      "responses": [
+        "JENNIFER B. ESCOBAR, MAT"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "location",
+      "patterns": [
+        "Where is San Sebastian College - Recoletos de Cavite located?",
+        "Can you tell me the address of SSCRdC?",
+        "What is the location of SSCRdC?",
+        "Where is the Canacao Campus?",
+        "Where is the Cañacao Campus?"
+      ],
+      "responses": [
+        "Main Campus: Manila-Cavite Road, Sta. Cruz, Cavite City, 4100, Philippines\nCañacao Campus: Padre Burgos St., Bo. Rosario, San Roque, Cavite City, 4100, Philippines"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "gymnasium",
+      "patterns": [
+        "Where is gymnasium?",
+        "Can you tell me the location of the gymnasium?",
+        "How do I get to the gymnasium?"
+      ],
+      "responses": [
+        "You can find the gymnasium at the Cañacao Campus located on Padre Burgos St., Bo. Rosario, San Roque, Cavite City, 4100, Philippines. If you plan to take a jeepney to get there, look for the one with a 'PN' placard."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "payment",
+      "patterns": [
+        "Where can I pay my tuition?",
+        "How do I settle my tuition?",
+        "Where is the tuition fee payment?",
+        "Where can I pay for my fees",
+        "Payment fee",
+        "Where to pay"
+      ],
+      "responses": [
+        "You can pay your tuition fee or other fees at the cashier located in the Saint Augustine Lobby or SA Lobby."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "tuition",
+      "patterns": [
+        "Where can I see how much my tuition is?",
+        "How do I check my tuition fee?",
+        "Can I know the amount of my tuition fee?"
+      ],
+      "responses": [
+        "You can view the updated tuition fees for different courses, which are posted on the bulletin board located between the Accounting Office and Finance Office. Alternatively, you can directly inquire about them at the cashier's office."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "sebasty_work",
+      "patterns": [
+        "How does Sebasty Work?",
+        "What is the functionality of Sebasty?"
+      ],
+      "responses": [
+        "Sebasty is powered by rechargeable batteries and can be controlled or not by CCC or an Admin. It is responsible for encoding and updating details about the school's latest activities."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "courses",
+      "patterns": [
+        "Available courses",
+        "What courses are offered?",
+        "List of courses"
+      ],
+      "responses": [
+        "The available courses at San Sebastian College - Recoletos de Cavite are:\n- BS Hospitality Management\n- BS Tourism Management\n- BSBA Financial Management\n- BSBA Marketing Management\n- BS Information Technology\n- BS Computer Engineering\n- BS Electronics Engineering\n- BS Industrial Engineering\n- BS Psychology\n- BS Accountancy\n- BS Communication\n- BS Nursing\n- BS Criminology"
+      ],
+      "context_set": ""
+    }
+  ]
+}
