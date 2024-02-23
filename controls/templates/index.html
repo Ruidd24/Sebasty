@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        #video-stream {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #stop {
+            background-color: #ff0000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Robot Control</h1>
+    <div id="video-stream">
+        <img src="{{ url_for('video_feed') }}">
+    </div>
+    <div>
+        <form action="/control" method="post">
+            <button type="submit" name="direction" value="forward">Forward</button>
+            <br>
+            <button type="submit" name="direction" value="left">Left</button>
+            <button id="stop" type="submit" name="direction" value="stop">Stop</button>
+            <button type="submit" name="direction" value="right">Right</button>
+            <br>
+            <button type="submit" name="direction" value="backward">Backward</button>
+        </form>
+    </div>
+</body>
+</html>
